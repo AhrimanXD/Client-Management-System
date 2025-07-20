@@ -8,6 +8,10 @@ class Client(models.Model):
   last_name = models.CharField(max_length=128)
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='clients')
 
+  def __str__(self) -> str:
+      return f"{self.first_name} {self.last_name}"
+  
+  
 class ClientEmail(models.Model):
     email = models.EmailField()
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='emails')
