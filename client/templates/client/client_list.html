@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<a href="{% url 'client_create' %}">Create Client</a>
 {% if clients %}
 <ul>
 {% for client in clients %}

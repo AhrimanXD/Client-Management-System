@@ -9,12 +9,16 @@
   <ul>
     {% for email in emails %}
     <li>{{ email.email }}</li>
+    {% empty %}
+    <li>No Emails Available</li>
     {% endfor %}
   </ul>
   <h3>Phone Numbers</h3>
   <ul>
     {% for phone in phone_numbers %}
     <li>{{ phone.phone_number }}</li>
+    {% empty %}
+    <li>No Phone Numbers Available</li>
     {% endfor %}
   </ul>
   

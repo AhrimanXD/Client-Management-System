@@ -1,0 +1,18 @@
+<!-- templates/clients/client_form.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h3>Client Info</h3>
+  {{ client_form.as_p }}
+
+  <h3>Email (optional)</h3>
+  {{ email_form.as_p }}
+
+  <h3>Phone Number (optional)</h3>
+  {{ phone_form.as_p }}
+
+  <button type="submit">Create Client</button>
+</form>
+{% endblock content%}
