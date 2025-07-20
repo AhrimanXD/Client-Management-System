@@ -2,6 +2,7 @@
 
 {% block content %}
 
+  <a href="{% url 'client_update' client.pk %}">Update</a>
   <h1>{{ client.first_name }} {{ client.last_name }}</h1>
   <h2>Contact Details</h2>
 

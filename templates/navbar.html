@@ -1,8 +1,22 @@
-<nav>
-  <a href="{% url 'client_list' %}">Clients</a>
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit">Logout</button>
-  </form>
-  
+<nav class="bg-white shadow-md px-6 py-4 flex items-center justify-between transition-colors duration-300">
+  <!-- Left Section: Logo or Title -->
+  <div class="text-xl font-bold text-gray-800">
+    <a href="{% url 'client_list' %}" class="hover:text-blue-600">ClientCRM</a>
+  </div>
+
+  <!-- Right Section: Nav Links, Toggle, & Logout -->
+  <div class="flex items-center space-x-4">
+    <a href="{% url 'client_list' %}" class="text-gray-700 hover:text-blue-600 font-medium">Clients</a>
+
+    <!-- 🔒 Logout -->
+    <form action="{% url 'logout' %}" method="post">
+      {% csrf_token %}
+      <button
+        type="submit"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium"
+      >
+        Logout
+      </button>
+    </form>
+  </div>
 </nav>

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <h3>Emails</h3>
+    {{ email_formset.management_form }}
+    {% for form in email_formset %}
+        {{ form.as_p }}
+    {% endfor %}
+
+    <h3>Phone Numbers</h3>
+    {{ phone_formset.management_form }}
+    {% for form in phone_formset %}
+        {{ form.as_p }}
+    {% endfor %}
+
+    <button type="submit">Save</button>
+</form>
+{% endblock content %}

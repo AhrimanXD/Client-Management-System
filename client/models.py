@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.urls import reverse
+
 
 User = get_user_model()
 
@@ -7,6 +9,9 @@ class Client(models.Model):
   first_name = models.CharField(max_length=128)
   last_name = models.CharField(max_length=128)
   user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='clients')
+
+  def get_absolute_url(self):
+      return reverse('client_detail', kwargs={'pk': self.pk})
 
   def __str__(self) -> str:
       return f"{self.first_name} {self.last_name}"
