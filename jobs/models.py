@@ -20,7 +20,7 @@ STATUS = [
 class Job(models.Model):
   title = models.CharField(max_length=300)
   description = models.TextField(max_length=1000, null=True, blank=True)
-  category = models.ForeignKey(JobCategory, on_delete=models.SET_NULL, related_name='jobs')
+  category = models.ForeignKey(JobCategory, on_delete=models.SET_NULL, related_name='jobs', null=True, blank=True)
   status = models.CharField(max_length=40, choices=STATUS)
   starting_date = models.DateField()
   due_date = models.DateField()
