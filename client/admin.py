@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Client, ClientEmail, ClientPhoneNumber
 
-# Register your models here.
+admin.site.register(Client)
+admin.site.register(ClientEmail)
+admin.site.register(ClientPhoneNumber)
