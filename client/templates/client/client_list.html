@@ -1,4 +1,6 @@
+{% extends 'base.html' %}
 
+{% block content %}
 {% if clients %}
 
 {% for client in clients %}
@@ -8,3 +10,4 @@
 {% else %}
   <h1>No Clients</h1>
 {% endif %}
+{% endblock content %}

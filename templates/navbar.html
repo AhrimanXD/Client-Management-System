@@ -1,0 +1,8 @@
+<nav>
+  <a href="{% url 'client_list' %}">Clients</a>
+  <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+  </form>
+  
+</nav>
